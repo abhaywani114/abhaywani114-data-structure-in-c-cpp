@@ -71,13 +71,20 @@ void display_array() {
 }
 
 void insert_at_end() {
-	int i = 0;
+ 	int i = 0, temp;
 
 	while (arr[i] != -1)
 		i++;
 
-	printf("\n\tEnter value to the element> ");
-	scanf("%d", &arr[i]);
+	printf("\n\tEnter positive value to the element> ");
+	scanf("%d", &temp);
+
+	if (temp < 0) {
+		printf("\tError: Given element is negetive.");
+		return;
+	}
+
+	arr[i] = temp;
 }
 
 
@@ -92,8 +99,13 @@ void insert_at_pos() {
 		return;
 	}
 	
-	printf("\n\tEnter value to the element> ");
+	printf("\n\tEnter positive value to the element> ");
 	scanf("%d", &temp);
+
+	if (temp < 0) {
+		printf("\tError: Given element is negetive.");
+		return;
+	}
 
 	//while (arr[last_element] != -1)
 	//	last_element++;
