@@ -58,6 +58,33 @@ class linked_list {
 			
 			cout << endl << endl;
 		}
+		
+		void delete_node(int pos) {
+			cout << "delete(" << pos << ")" << endl;
+			
+			node* temp = head, *temp2 = NULL;
+			
+			if (pos > 1) {
+				// i < pos - 2 because we want pos as natural numbers
+				for (int i = 0; i < pos - 2; i++)
+					temp = temp->next;
+				
+				temp2 = temp->next;
+				
+				if (temp->next != NULL)
+					temp->next = temp->next->next;
+				else
+					temp->next = NULL;
+
+				delete temp2;
+			}
+
+			if (pos == 1) {
+				temp2 = head;
+				head = head->next;
+				delete temp2;
+			} 
+		}
 };
 
 int main() {
@@ -67,5 +94,11 @@ int main() {
 	l1.insert(-1, 4);	
 	l1.insert(1, 6);
 	l1.insert(0, -1);	
+
+	//delete
+	l1.delete_node(3);
+	l1.delete_node(1);
+	l1.print();
+
 	return 1;
 }
