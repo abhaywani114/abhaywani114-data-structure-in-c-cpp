@@ -86,6 +86,18 @@ class linked_list {
 			} 
 		}
 
+		/*
+			Algorithm:
+				1. init prev = NULL
+				2. Select a node, temp
+				3. set temp2 = temp
+				4. set temp = temp->next
+				5. temp2->next = prev
+				6. prev = temp2
+				7. if temp != NULL GOTO 3
+				8. set head = prev
+		*/
+
 		void reverse_linked_list() {
 			cout << "reverse_linked_list()" << endl;
 			node *temp = head, *temp2 = NULL,*prev = NULL;
