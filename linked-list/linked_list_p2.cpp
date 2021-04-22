@@ -85,6 +85,20 @@ class linked_list {
 				delete temp2;
 			} 
 		}
+
+		void reverse_linked_list() {
+			cout << "reverse_linked_list()" << endl;
+			node *temp = head, *temp2 = NULL,*prev = NULL;
+			
+			while (temp != NULL) {
+				temp2 = temp;
+				temp = temp->next;
+				temp2->next = prev;
+				prev = temp2;
+			}
+
+			head = prev;
+		}
 };
 
 int main() {
@@ -97,7 +111,10 @@ int main() {
 
 	//delete
 	l1.delete_node(3);
-	l1.delete_node(1);
+	l1.print();
+
+	//reverse
+	l1.reverse_linked_list();
 	l1.print();
 
 	return 1;
