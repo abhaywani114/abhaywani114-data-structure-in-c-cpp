@@ -8,6 +8,36 @@ class linked_list {
 			node* next;
 		};
 		node* head = NULL;
+
+		void print_recursive_forward(node * node) {
+			if (node == NULL)
+				return;
+
+			printf("\t%d", node->data);
+			print_recursive_forward(node->next);
+		}
+		
+		void print_recursive_reverse(node * node) {
+			if (node == NULL)
+				return;
+
+			print_recursive_reverse(node->next);
+			printf("\t%d", node->data);
+		}
+
+		void reverse_linked_list_recursion(node * start) {
+			if (start->next == NULL) {
+				head = start;
+				return;
+			}
+
+			reverse_linked_list_recursion(start->next);
+
+			node *temp = start->next;
+			temp->next = start;
+			start->next = NULL;
+		}
+
 	
 	public:
 		void insert(int pos, int val) {
@@ -58,7 +88,19 @@ class linked_list {
 			
 			cout << endl << endl;
 		}
-		
+
+		void print_recursive(bool is_reverse = false) {
+			cout << endl << "print_recursive( is_reverse = " << is_reverse << ")" << endl;
+
+			cout << "Printing linked List (recursive): ";
+			if (is_reverse == false)
+				print_recursive_forward(head);
+			else
+				print_recursive_reverse(head);
+
+			cout << endl;
+		}
+			
 		void delete_node(int pos) {
 			cout << "delete(" << pos << ")" << endl;
 			
@@ -111,6 +153,11 @@ class linked_list {
 
 			head = prev;
 		}
+
+		void reverse_linked_list_recursion() {
+			cout << endl << "reverse_linked_list_recursion()" << endl;
+			reverse_linked_list_recursion(head);
+		}
 };
 
 int main() {
@@ -127,6 +174,14 @@ int main() {
 
 	//reverse
 	l1.reverse_linked_list();
+	l1.print();
+
+	//recursive Print
+	l1.print_recursive(true); 
+	l1.print_recursive(); 
+
+	//recursive Reverse
+	l1.reverse_linked_list_recursion();
 	l1.print();
 
 	return 1;
