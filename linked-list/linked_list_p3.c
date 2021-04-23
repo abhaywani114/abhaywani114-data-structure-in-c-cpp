@@ -10,12 +10,13 @@ struct node {
 //function prototyping
 struct node * insert_node(struct node *);
 void print_node(struct node *);
-void reversing_node_recursing(struct node *);
+void reversing_node_recursing(struct node *, struct node **);
 
-struct node *head = NULL;
 int main() {
 	int node_no;
 	
+	struct node *head = NULL;
+
 	printf("How many nodes you want to create> ");
 	scanf("%d", &node_no);
 
@@ -25,7 +26,7 @@ int main() {
 	print_node(head);	
 
 	printf("\nReversing using an recursive algorithm\n");
-	reversing_node_recursing(head);
+	reversing_node_recursing(head, &head);
 	print_node(head);
 	return 1;
 }
@@ -64,13 +65,13 @@ void print_node(struct node * head) {
 	printf("\n");
 }
 
-void reversing_node_recursing(struct node * current_node) {
+void reversing_node_recursing(struct node * current_node, struct node ** head_node) {
 	if (current_node->next == NULL) {
-		head = current_node;
+		*head_node = current_node;
 		return;
 	}
 
-	reversing_node_recursing(current_node->next);
+	reversing_node_recursing(current_node->next, head_node);
 	current_node->next->next = current_node;
 	current_node->next = NULL;
 }
