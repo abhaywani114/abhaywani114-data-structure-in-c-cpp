@@ -8,5 +8,8 @@ The standard stack operation in stack are **push**, **pop**, **top**, and, **isE
 Some appilations of stacks are: **function calls**, **recursion**, **undo implementation**, and, **balanced parathesis*.
 
 ## Programs ###
-- **stack_using_array_implementation:** demonstrating an *int stack* implementation using arrays in C++. [Note: for arrays in worst case the time complexity is O(N)]
+- **stack_using_array_implementation:** demonstrating an *int stack* implementation using arrays in C++. 
+
+
+> Note: for arrays in worst case the time complexity is O(N)
 .
