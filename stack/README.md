@@ -9,7 +9,7 @@ Some appilations of stacks are: **function calls**, **recursion**, **undo implem
 
 ## Programs ###
 - **stack_using_array_implementation:** demonstrating an *int stack* implementation using arrays in C++. 
-
+- **stack_using_linked_list_implementation:** demonstrating an *int stack* implementation using linked list in C++. 
 
 > Note: for arrays in worst case the time complexity is O(N)
 .
