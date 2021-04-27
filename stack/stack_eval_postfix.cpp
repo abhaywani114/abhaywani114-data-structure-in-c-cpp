@@ -14,6 +14,108 @@ class EvalPostfix {
 			EvalPostfix(string st) {
 				expression = st;
 			}
+			
+			bool check_expression() {
+				stack<string> s;
+				string exp = expression, last_element;
+				bool is_valid = true;
+					
+				for (int i = 0; i < exp.length(); i++) {
+					switch(exp[i]) {
+						case '*':
+						case '/':
+						case '-':
+						case '+':
+							if (exp[i+1] == ',' || (i+1) == expression.length()) {
+								
+								while(!s.empty()) {
+									if (s.top() == ",")
+										s.pop();
+									else
+										break;
+								}
+
+								//first operand
+								if (s.empty())
+									is_valid = false;
+								else
+									s.pop();
+							
+								while(!s.empty()) {
+									if (s.top() == ",")
+										s.pop();
+									else
+										break;
+								}
+	
+								//second operand
+								if (s.empty())
+									is_valid = false;
+								else
+									s.pop();
+					
+								//if third operand exist
+								if (!s.empty())
+									is_valid = false;
+								
+								s.push("0");
+									
+							} else {
+								if (exp[i] != '+' || exp[i] != '-') {
+									is_valid = false;
+								}
+
+								cout << "is_valid OP NUM" << is_valid << endl;
+							}
+							break;
+						case '1':
+						case '2':
+						case '3':
+						case '4':
+						case '5':
+						case '6':
+						case '7':
+						case '8':
+						case '9':
+						case '0':
+							last_element = (!s.empty() ? ( s.top() == "," ? "":s.top()):"");
+							last_element += exp[i];
+
+							if(!s.empty())
+								if (s.top() != ",")
+									s.pop();
+
+							s.push(last_element);
+
+							if (exp[i+1] == '\0')
+								is_valid = false;
+
+							break;
+						case ',':
+						
+							if (s.empty())
+								is_valid = false;
+							else if (s.top() == ",")
+								is_valid = false;
+
+							s.push(",");
+							break;
+						default:
+							is_valid = false;
+							break;
+					}
+	
+					if (is_valid == false)
+						break;
+				}
+
+				if (is_valid == true)
+					cout << "The postfix expression is valid" << endl;
+				else
+					cout << "The postfix expression is not valid" << endl;
+
+				return is_valid;
+			}
 	
 			void eval_expression() {
 				stack<string> s;
@@ -102,8 +204,10 @@ int main() {
 	getline(cin, exp);	
 		
 	EvalPostfix EPF(exp);
+	
+	if(EPF.check_expression())
+		EPF.eval_expression();
 
-	EPF.eval_expression();
 	EPF.print_result();
 
 	return 1;
