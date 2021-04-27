@@ -80,8 +80,7 @@ class EvalPostfix {
 							
 						break;
 						case ',':
-							if (expression.length() < i)
-								s.push(",");
+							s.push(",");
 						break;
 					}
 				}
