@@ -16,10 +16,10 @@ class EvalPostfix {
 			}
 	
 			void eval_expression() {
-				stack<int> s;
+				stack<string> s;
 			
-				string exp = expression;
-				int operand_1, operand_2, last_element;
+				string exp = expression, last_element;
+				int operand_1, operand_2, res;
 
 				for (int i = 0; i < exp.length(); i++) {
 					switch(exp[i]) {
@@ -27,31 +27,36 @@ class EvalPostfix {
 						case '/':
 						case '-':
 						case '+':
-							while (s.top() == -1)
+							if (exp[i+1] == ',' || (i+1) == expression.length()) {
+								while (s.top() == ",")
+									s.pop();
+
+								operand_2 = stoi(s.top());
 								s.pop();
 
-							operand_2 = s.top();
-							s.pop();
+								while (s.top() == ",")
+									s.pop();
 
-							while (s.top() == -1)
+								operand_1 = stoi(s.top());
 								s.pop();
 
-							operand_1 = s.top();
-							s.pop();
+								if (exp[i] == '*')
+									res = operand_1 * operand_2;
 
-							if (exp[i] == '*')
-								last_element = operand_1 * operand_2;
+								if (exp[i] == '/')
+									res = operand_1 / operand_2;
 
-							if (exp[i] == '/')
-								last_element = operand_1 / operand_2;
+								if (exp[i] == '+')
+									res = operand_1 + operand_2;
 
-							if (exp[i] == '+')
-								last_element = operand_1 + operand_2;
+								if (exp[i] == '-')
+									res = operand_1 - operand_2;
 
-							if (exp[i] == '-')
-								last_element = operand_1 - operand_2;
+								s.push(to_string(res));
+							} else {
+								s.push(string(1, exp[i]));
+							}
 
-							s.push(last_element);
 						break;
 						case '1':
 						case '2':
@@ -63,29 +68,25 @@ class EvalPostfix {
 						case '8':
 						case '9':
 						case '0':
-							last_element = (!s.empty() ? s.top():-1);
-						
-							if (last_element == -1) {
-								last_element = 0;
-								s.push(last_element);
-							}
+							last_element = (!s.empty() ? s.top():"");
 
-							if (last_element != -1) {
-								string temp_st = to_string(last_element);
-								temp_st += exp[i];
-								last_element = stoi(temp_st);
+							if (last_element == ",") 
+								last_element = "";
+							else if (last_element != "," && !s.empty())
 								s.pop();
-								s.push(last_element);
-							} 
-					
+								
+							last_element += exp[i];
+							s.push(last_element);
+							
 						break;
 						case ',':
-							s.push(-1);
+							if (expression.length() < i)
+								s.push(",");
 						break;
 					}
 				}
 
-				result = s.top();
+				result = stoi(s.top());
 				s.pop();
 			}
 

@@ -30,6 +30,7 @@ This notation style is known as Reversed Polish Notation. In this notation style
 - **stack_using_linked_list_implementation:** demonstrating an *int stack* implementation using linked list in C++. 
 - **stack_reversing_string:** demonstrating an *string reversing* implementation using stack (linked list) in C. 
 - **stack_reversing_linked_list_stl:** demonstrating an *linked list reversing* implementation using stack (STL) in C++. 
-- **tack_check_balancing_parentheses** demonstrating balancing parentheses application of stacks using stack (STL) in C++.
+- **stack_check_balancing_parentheses** demonstrating balancing parentheses application of stacks using stack (STL) in C++.
+- **stack_eval_postfix** evaluation of a postfix expression using stack (STL) in c++.
 
 > Note: Using arrays for stack implementation, worst case's time complexity is O(N).
