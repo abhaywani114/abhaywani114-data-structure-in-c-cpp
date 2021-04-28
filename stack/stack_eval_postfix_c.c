@@ -141,7 +141,7 @@ void eval_expression(char ch[]) {
 int main() {
 	char expression[1000];
 
-	printf("Enter a postfix expression> ");
+	printf("Enter a postfix expression (delimeter ,)> ");
 	scanf("%s",&expression);
 	eval_expression(expression);
 	return 1;
