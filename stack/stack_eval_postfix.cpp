@@ -54,10 +54,6 @@ class EvalPostfix {
 								else
 									s.pop();
 					
-								//if third operand exist
-								if (!s.empty())
-									is_valid = false;
-								
 								s.push("0");
 									
 							} else {

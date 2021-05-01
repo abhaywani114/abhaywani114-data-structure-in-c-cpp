@@ -34,5 +34,6 @@ This notation style is known as Reversed Polish Notation. In this notation style
 - **stack_eval_postfix** evaluation of a postfix expression with expression validator using stack (STL) in c++ [Supports negetive numbers].
 - **stack_eval_postfix_c** evaluation of a postfix expression with realtime self validator using stack (Linked List) in C [Supports negetive numbers].
 - **stack_eval_prefix** evaluation of a prefix expression with realtime self validator using stack (STL) in C++ [Supports negetive numbers].
+- **stack_infix_to_postfix** conversion of an infix expression into postfix expression using stack (STL) in C++.
 
 > Note: Using arrays for stack implementation, worst case's time complexity is O(N).
