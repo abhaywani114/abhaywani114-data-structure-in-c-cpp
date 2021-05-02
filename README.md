@@ -12,3 +12,4 @@ ADT is a layer of a mathematical model that defines data and operation but no im
 
 - **Stack:** contains programs related to stack data structure.
 
+- **Queue:** contains programs related to queue data structure.
