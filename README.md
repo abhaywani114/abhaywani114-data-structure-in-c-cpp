@@ -8,8 +8,11 @@ ADT is a layer of a mathematical model that defines data and operation but no im
 
 ### Programs ###
 - **List Using Array:** demonstrating an *unsigned int list* implementation as an ADT that should be capable to `insert`, `remove`, `modify`,  and, `count` elements.
+
 - **Linked List:** contains programs related to linked list.
 
 - **Stack:** contains programs related to stack data structure.
 
 - **Queue:** contains programs related to queue data structure.
+
+- **Tree:** contains programs related to tree data structure.
