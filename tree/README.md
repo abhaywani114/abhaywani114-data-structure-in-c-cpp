@@ -35,7 +35,18 @@ For arrays, if i is the index, then:
 - left-child-node = *2i +1*
 - right-child-node = *2i + 2*
 
+#### Traversing Binary Search Tree ####
+Breadth-First Traversal: In Breadth-first traversal, all the nodes of the tree are accessed level-wise i.e horizontally. It is also called Level Order Traversal
+Depth-First Traversal: In depth-first traversal, all the nodes of the tree are accessed vertically. 
+
+#### Types of Depth-first Traversal ####
+By convention, there are 3 types of Depth-first traversal:
+Preorder Traversal: In preorder traversal root first root, then left and right children are traversed. `<root><left><right>`
+Inorder Traversal: In inorder traversal, first left child then root and right child are processed. This is order is always sorted for all binary search trees. `<left><root><right>`
+Postorder Traversal: In post order traversal, first left then right and root children are processed. `<left><right><root>`
+
 ## Programs ###
 - **Binary tree.cpp** demonstrating an *binary search tree* implementation as using **linked list** in C++.
 - **binary_tree_find_min_max.c** demonstrating an *binary search tree* implementation as using **linked list** in C with the min/max algorithm.
 - **binary_tree_find_height.cpp** demonstrating an *binary_tree_find_height search tree* implementation with algo of **finding tree height** and **iterative insersetion** using C++.
+- **binary_tree_traversal_algo.c**  emonstrating an *binary search tree* implementation as using **linked list and queue** in C with level order, pre order, inorder and post order travelsal.
