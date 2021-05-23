@@ -38,3 +38,4 @@ For arrays, if i is the index, then:
 ## Programs ###
 - **Binary tree.cpp** demonstrating an *binary search tree* implementation as using **linked list** in C++.
 - **binary_tree_find_min_max.c** demonstrating an *binary search tree* implementation as using **linked list** in C with the min/max algorithm.
+- **binary_tree_find_height.cpp** demonstrating an *binary_tree_find_height search tree* implementation with algo of **finding tree height** and **iterative insersetion** using C++.
