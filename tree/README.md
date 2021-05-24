@@ -51,3 +51,4 @@ By convention, there are 3 types of Depth-first traversal:
 - **binary_tree_find_height.cpp** demonstrating an *binary_tree_find_height search tree* implementation with algo of **finding tree height** and **iterative insersetion** using C++.
 - **binary_tree_traversal_algo.c**  emonstrating an *binary search tree* implementation as using **linked list and queue** in C with level order, pre order, inorder and post order travelsal.
 - **binary_tree_is_search_tree.cpp** demostrating an **BST** using *linked list* with *isBST algorithm* and *delete node algoritm* in c++.
+- **binary_tree_delete_algo.c** demostrating an **BST** using *linked list* with *isBST algorithm* and *delete node algoritm* in c.
