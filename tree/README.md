@@ -52,3 +52,6 @@ By convention, there are 3 types of Depth-first traversal:
 - **binary_tree_traversal_algo.c**  emonstrating an *binary search tree* implementation as using **linked list and queue** in C with level order, pre order, inorder and post order travelsal.
 - **binary_tree_is_search_tree.cpp** demostrating an **BST** using *linked list* with *isBST algorithm* and *delete node algoritm* in c++.
 - **binary_tree_delete_algo.c** demostrating an **BST** using *linked list* with *isBST algorithm* and *delete node algoritm* in c.
+- **binary_tree_successor.c** demostrating an **BST** with find the successor algorithms in c.
+- **binary_tree_.cpp** demostrating an **BST** with find the successor algorithms in c++.
+- **binary_tree_predecessor.cpp** demostrating an **BST** with find the predecessor algorithms in c++.
